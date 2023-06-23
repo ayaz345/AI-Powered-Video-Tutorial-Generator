@@ -39,7 +39,10 @@ def create_script(topic_name, level_of_explanation, age, creativity_level, humou
 
     # Create and run the llm chain
     llm_chain = LLMChain(prompt=prompt, llm=llm)
-    response = llm_chain.run(topic_name=topic_name, age=age, creativity_string=creativity_string,
-                             humour_string=humour_string, level_string=level_string)
-
-    return response
+    return llm_chain.run(
+        topic_name=topic_name,
+        age=age,
+        creativity_string=creativity_string,
+        humour_string=humour_string,
+        level_string=level_string,
+    )

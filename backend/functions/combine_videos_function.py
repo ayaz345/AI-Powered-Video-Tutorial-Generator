@@ -22,10 +22,10 @@ def combine_videos(timestamp):
 
         # Resize videos based on scenario
         scenario = random.randint(1, 4)
-        if scenario in [1, 2]:
+        if scenario in {1, 2}:
             video1 = video1.resize((640, 720))
             video2 = video2.resize((640, 720))
-        elif scenario in [3, 4]:
+        elif scenario in {3, 4}:
             video1 = video1.resize((320, 360))
             video2 = video2.resize((1280, 720))
 

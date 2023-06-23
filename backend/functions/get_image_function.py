@@ -15,13 +15,13 @@ def get_image(query, value, timestamp, count):
     timestamp_path = f"{timestamp}/images"
 
     # Get the list of image files in the query folder
-    images = [f for f in os.listdir(query_path)]
+    images = list(os.listdir(query_path))
 
     # Remove images that are 1 KB
     images = [f for f in images if os.path.getsize(
         os.path.join(query_path, f)) > 2000]
 
-    if len(images) == 0 or images == None:
+    if not images or images is None:
         images = ["src/backup.jpg"] * value
         # Rename and move the remaining images to the timestamp/images folder
         for image in images:

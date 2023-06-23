@@ -21,6 +21,4 @@ def create_search_query(text):
 
     # Create and run the llm chain
     llm_chain = LLMChain(prompt=prompt, llm=llm)
-    response = llm_chain.run(text=text).replace('\n', "")
-
-    return response
+    return llm_chain.run(text=text).replace('\n', "")
